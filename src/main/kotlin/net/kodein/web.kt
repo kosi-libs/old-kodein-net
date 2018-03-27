@@ -1,6 +1,7 @@
 package net.kodein
 
 import org.w3c.dom.*
+import org.w3c.dom.css.get
 import kotlin.browser.document
 import kotlin.browser.window
 import kotlin.dom.addClass
@@ -61,12 +62,23 @@ fun main() {
         val scrollSpan = endScroll - startScroll
         val factor = 1 - (body.scrollTop - startScroll) / scrollSpan
 
-        val endPos = -1100 + kotlinDiv.clientHeight
-        val bgPos = (factor * endPos).toInt()
+        val heightStr = window.getComputedStyle(kotlinDiv).backgroundSize.split(" ")[1]
+        val height = heightStr.substring(0, heightStr.length - 2).toInt()
+
+        val endPos = -height + kotlinDiv.clientHeight
+//        val bgPos = (factor * endPos).toInt()
+        val bgPos = (factor * (endPos - kotlinDiv.clientHeight)).toInt() + (kotlinDiv.clientHeight / 2)
+
         kotlinDiv.style.backgroundPosition = "center ${bgPos}px"
     }
 
     setKotlinPos()
+
+
+    document.onscroll = {
+        setHeaderPos()
+        setKotlinPos()
+    }
 
 
     @Suppress("UNCHECKED_CAST")
@@ -81,12 +93,6 @@ fun main() {
             it to { anchor.offsetTop.toDouble() - 60.0 }
         }
     }
-
-    document.onscroll = {
-        setHeaderPos()
-        setKotlinPos()
-    }
-
 
     anchors.forEach { (el, offset) ->
         el.onclick = {

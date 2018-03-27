@@ -47,7 +47,8 @@ div#header {
     justify-content: center;
     align-items: center;
     position: fixed;
-    width: 1366px;
+    width: 100%;
+    max-width: 1366px;
     top: 0;
     overflow: hidden;
 
@@ -57,7 +58,8 @@ div#header {
         right: 0;
         display: flex;
         justify-content: flex-end;
-        padding-right: 28px;
+        align-items: center;
+        padding: 0 28px;
         font-size: 0.7em;
 
         a {
@@ -100,9 +102,9 @@ div#header {
     h2 {
         font-weight: 300;
         color: white;
-        font-size: 1.85em;
-        margin-top: -0.8em;
-        padding-left: 0.12em;
+        font-size: 37px;
+        margin-top: -28px;
+        padding-left: 5px;
     }
 
     &.small {
@@ -180,7 +182,7 @@ div#faith {
     div.text {
         display: flex;
         flex-wrap: wrap;
-        width: 1200px;
+        max-width: 1200px;
         margin: 0 auto;
         justify-content: center;
 
@@ -243,8 +245,9 @@ div.kotlin {
 
 p.kodein-framework {
     text-align: left;
-    width: 800px;
+    max-width: 800px;
     margin: 30px auto;
+    padding: 0 20px;
     font-weight: 300;
     font-size: 1.4em;
 }
@@ -252,7 +255,7 @@ p.kodein-framework {
 div#footer {
     background-color: #6534ff;
     color: white;
-    padding: 40px 0 120px 0;
+    padding: 40px 0 90px 0;
 
     a {
         color: white;
@@ -260,7 +263,7 @@ div#footer {
 
     ul.offers {
         li {
-            margin: 0 100px;
+            margin: 30px 100px;
 
             h3 {
                 font-size: 1.2em;
@@ -271,4 +274,23 @@ div#footer {
             }
         }
     }
+}
+
+@media (max-width: 640px) {
+    body {
+        font-size: 1.1em;
+    }
+
+    div#menu {
+        display: none !important;
+    }
+
+    div#header.small h1 {
+        margin: 18px 0 0 0;
+    }
+
+    div.kotlin.big {
+        background-size: 800px 800px;
+    }
+
 }
