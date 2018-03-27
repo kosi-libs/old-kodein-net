@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700");
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background: #eee;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.25em; }
+
+h1 {
+  font-weight: 300;
+  font-size: 2.5em;
+  margin: 40px; }
+
+hr {
+  background: none;
+  border: none;
+  margin: 40px 0; }
+
+.transition {
+  transition: all 0.3s; }
+
+div#strip {
+  background: white;
+  max-width: 1366px;
+  min-height: 100%;
+  margin: auto;
+  text-align: center; }
+
+div#header {
+  background-color: #6534ff;
+  height: 579px;
+  background-image: url("imgs/background.png");
+  background-repeat: repeat;
+  background-position: center -220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 1366px;
+  top: 0;
+  overflow: hidden; }
+  div#header div#menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 28px;
+    font-size: 0.7em; }
+    div#header div#menu a {
+      display: block;
+      font-weight: 700;
+      padding: 11px 15px;
+      text-decoration: none;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.15s; }
+      div#header div#menu a:hover {
+        background-color: #3504cf8F; }
+  div#header img {
+    width: 325px;
+    display: block; }
+  div#header h1 {
+    background: url("imgs/logo.png");
+    background-size: 325px auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 325px;
+    font-weight: 700;
+    font-size: 4.2em;
+    margin: 0;
+    margin-top: -20px; }
+    div#header h1 a {
+      color: transparent;
+      text-decoration: none; }
+  div#header h2 {
+    font-weight: 300;
+    color: white;
+    font-size: 1.85em;
+    margin-top: -0.8em;
+    padding-left: 0.12em; }
+  div#header.small h1 {
+    width: 170px;
+    font-size: 2.1em;
+    background-size: 170px auto;
+    margin: 18px 400px 0 0; }
+  div#header.small h2 {
+    opacity: 0;
+    pointer-events: none; }
+
+span#header-shadow {
+  display: block;
+  height: 579px; }
+
+ul#services {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 920px;
+  margin: auto; }
+  ul#services li {
+    width: 210px;
+    margin: 20px 0; }
+    ul#services li img {
+      width: 74px;
+      height: 70px;
+      margin-bottom: 40px; }
+
+ul.offers {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+  ul.offers li {
+    max-width: 450;
+    margin: 30px 20px; }
+    ul.offers li h3 {
+      font-size: 1.4em;
+      margin-bottom: 30px; }
+    ul.offers li p {
+      font-size: 1.4em;
+      font-weight: 300; }
+
+div#faith {
+  background-color: #faf9ff;
+  padding-bottom: 40px; }
+  div#faith h2 {
+    font-weight: 300;
+    font-size: 1.75em;
+    padding: 80px; }
+  div#faith div.text {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1200px;
+    margin: 0 auto;
+    justify-content: center; }
+    div#faith div.text.reverse {
+      flex-direction: row-reverse; }
+    div#faith div.text p {
+      width: 450px;
+      margin: 40px 20px;
+      text-align: left;
+      font-weight: 300;
+      font-size: 1.15em; }
+      div#faith div.text p.quote {
+        font-weight: 400;
+        font-style: italic;
+        color: #6534ff;
+        font-size: 2.5em; }
+
+div.kotlin {
+  background-color: #6534ff;
+  color: white;
+  padding: 50px;
+  margin-bottom: 20px; }
+  div.kotlin.big {
+    background-image: url("imgs/kotlin-transparent.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1100px 1100px; }
+  div.kotlin h2 {
+    font-size: 2.5em;
+    font-weight: 300; }
+  div.kotlin p {
+    font-weight: 300;
+    font-size: 1.75em;
+    max-width: 900px;
+    margin: 30px auto; }
+  div.kotlin.small {
+    padding: 20px; }
+    div.kotlin.small p {
+      font-size: 1.5em;
+      margin: 10px auto; }
+
+p.kodein-framework {
+  text-align: left;
+  width: 800px;
+  margin: 30px auto;
+  font-weight: 300;
+  font-size: 1.4em; }
+
+div#footer {
+  background-color: #6534ff;
+  color: white;
+  padding: 40px 0 120px 0; }
+  div#footer a {
+    color: white; }
+  div#footer ul.offers li {
+    margin: 0 100px; }
+    div#footer ul.offers li h3 {
+      font-size: 1.2em; }
+    div#footer ul.offers li p {
+      font-size: 1.2em; }
+
+/*# sourceMappingURL=style.css.map */
