@@ -82,7 +82,7 @@ fun main() {
 
 
     @Suppress("UNCHECKED_CAST")
-    val anchors = document.querySelectorAll("div#header a").asList().map {
+    val anchors = document.querySelectorAll("a.goto").asList().map {
         it as HTMLAnchorElement
         val id = it.href.substringAfter('#')
         if (id.isBlank()) {

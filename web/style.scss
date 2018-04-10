@@ -52,6 +52,31 @@ div#header {
     top: 0;
     overflow: hidden;
 
+    div#languages {
+        position: absolute;
+        top: 0;
+        left: 10px;
+        height: 40px;
+        color: white;
+        font-size: 0.8em;
+        cursor: default;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+
+        p {
+          height: 1.6em;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-weight: 400;
+            cursor: pointer;
+        }
+    }
+
     div#menu {
         position: absolute;
         top: 0;
@@ -89,7 +114,8 @@ div#header {
         background-position: center;
         width: 325px;
         font-weight: 700;
-        font-size: 4.2em;
+        //font-size: 4.2em;
+        font-size: 84px;
         margin: 0;
         margin-top: -20px;
 
@@ -112,7 +138,7 @@ div#header {
             width: 170px;
             font-size: 2.1em;
             background-size: 170px auto;
-            margin: 18px 400px 0 0;
+            margin: 18px 480px 0 0;
         }
 
         h2 {
@@ -154,7 +180,7 @@ ul.offers {
     justify-content: center;
 
     li {
-        max-width: 450;
+        max-width: 450px;
         margin: 30px 20px;
 
         h3 {
@@ -276,7 +302,7 @@ div#footer {
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 820px) {
     body {
         font-size: 1.1em;
     }
@@ -293,4 +319,21 @@ div#footer {
         background-size: 800px 800px;
     }
 
+}
+
+@media (max-width: 355px) {
+    div#strip {
+        display: none !important;
+    }
+    body {
+        background-color: red;
+    }
+    body::after {
+        display: block;
+        padding-top: 30%;
+        content: "Viewport to small!!";
+        color: white;
+        font-size: 3em;
+        text-align: center;
+    }
 }

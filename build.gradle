@@ -28,6 +28,7 @@ dependencies {
 compileKotlin2Js {
     kotlinOptions.outputFile = "${projectDir}/web/out/app.js"
     kotlinOptions.sourceMap = true
+    kotlinOptions.sourceMapEmbedSources = "always"
 //    kotlinOptions.moduleKind = "umd"
 }
 
@@ -40,7 +41,7 @@ task copyKotlinResources {
             into "${projectDir}/web/out"
             include { fileTreeElement ->
                 def path = fileTreeElement.path
-                path.endsWith(".js") && (path.startsWith("META-INF/resources/") || !path.startsWith("META-INF/"))
+                path.endsWith(".js") || path.endsWith(".js.map") && (path.startsWith("META-INF/resources/") || !path.startsWith("META-INF/"))
             }
         }
     }
