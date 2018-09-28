@@ -9,6 +9,7 @@
             gtag('config', 'UA-119313091-1');
         </script>
 
+        <link rel="icon" href="imgs/KodeinKoders_fav.png" />
         <title>Kodein</title>
         <style type="text/css">
             body {
@@ -26,10 +27,20 @@
         </style>
     </head>
     <body>
-        <a href="en/"><img src="imgs/logo.png" /></a>
+        <a id="goTo" href="en/"><img src="imgs/logo-color.svg" /></a>
 
         <script type="text/javascript">
-            document.location.href = "en/";
+            var userLang = navigator.language || navigator.userLanguage;
+            var goTo = "en/";
+            if (userLang.startsWith("fr-"))
+                goTo = "fr/";
+            document.getElementById("goTo").href = goTo;
+            setTimeout(
+                function() {
+                    document.location.href = goTo;
+                },
+                1000
+            );
         </script>
     </body>
 </html>

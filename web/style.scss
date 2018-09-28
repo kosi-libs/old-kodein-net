@@ -1,5 +1,6 @@
+@import url(picon/LCTPicon.css);
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700');
+$orange: #E8441F;
 
 * {
     margin: 0;
@@ -8,14 +9,22 @@
 
 body {
     background: #eee;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Picon', sans-serif;
     font-size: 1.25em;
 }
 
 h1 {
-    font-weight: 300;
-    font-size: 2.5em;
+    font-weight: 700;
+    font-size: 1.9em;
     margin: 40px;
+
+    &.light {
+        font-weight: 200;
+    }
+
+    &.color {
+        color: $orange;
+    }
 }
 
 hr {
@@ -30,25 +39,24 @@ hr {
 
 div#strip {
     background: white;
-    max-width: 1366px;
+    max-width: 1040px;
     min-height: 100%;
     margin: auto;
     text-align: center;
 }
 
 div#header {
-    background-color: #6534ff;
-    height: 579px;
+    height: 585px;
     background-image: url('imgs/background.png');
     background-repeat: repeat;
-    background-position: center -220px;
+    background-size: 1040px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: fixed;
     width: 100%;
-    max-width: 1366px;
+    max-width: 1040px;
     top: 0;
     overflow: hidden;
 
@@ -90,14 +98,14 @@ div#header {
         a {
             display: block;
             font-weight: 700;
-            padding: 11px 15px;
+            padding: 14px 15px;
             text-decoration: none;
             color: white;
             cursor: pointer;
             transition: background-color 0.15s;
 
             &:hover {
-                background-color: #3504cf8F;
+                background-color: $orange;
             }
         }
     }
@@ -107,20 +115,30 @@ div#header {
         display: block;
     }
 
+    #logo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        img {
+            height: 5.55em;
+            width: 5.5em;
+            padding-bottom: 1.88em;
+        }
+    }
+
     h1 {
-        background: url('imgs/logo.png');
-        background-size: 325px auto;
-        background-repeat: no-repeat;
-        background-position: center;
-        width: 325px;
         font-weight: 700;
-        //font-size: 4.2em;
-        font-size: 84px;
-        margin: 0;
-        margin-top: -20px;
+        font-size: 2.98em;
+        margin: -20px 0 0;
+        text-align: left;
+
+        span {
+            font-weight: 300;
+        }
 
         a {
-            color: transparent;
+            color: white;
             text-decoration: none;
         }
     }
@@ -128,23 +146,31 @@ div#header {
     h2 {
         font-weight: 300;
         color: white;
-        font-size: 37px;
-        margin-top: -28px;
-        padding-left: 5px;
+        font-size: 1.38em;
+        margin-top: -0.45em;
+        text-align: left;
     }
 
     &.small {
-        h1 {
-            width: 170px;
-            font-size: 2.1em;
-            background-size: 170px auto;
-            margin: 18px 480px 0 0;
+        div#logo {
+            margin: 50px 430px 0 0;
+
+            img {
+                height: 1.7em;
+                width: 2em;
+                margin-top: -12px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                opacity: 0;
+                pointer-events: none;
+            }
         }
 
-        h2 {
-            opacity: 0;
-            pointer-events: none;
-        }
     }
 }
 
@@ -158,16 +184,17 @@ ul#services {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    max-width: 920px;
+    max-width: 700px;
     margin: auto;
 
     li {
-        width: 210px;
+        width: 150px;
         margin: 20px 0;
+        font-size: 0.75em;
 
         img {
-            width: 74px;
-            height: 70px;
+            width: 60px;
+            height: 55px;
             margin-bottom: 40px;
         }
     }
@@ -178,31 +205,33 @@ ul.offers {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: auto;
+    max-width: 800px;
 
     li {
-        max-width: 450px;
-        margin: 30px 20px;
+        max-width: 310px;
+        margin: 28px 20px;
 
         h3 {
-            font-size: 1.4em;
+            font-size: 1.07em;
             margin-bottom: 30px;
         }
 
         p {
-            font-size: 1.4em;
+            font-size: 1.05em;
             font-weight: 300;
         }
     }
 }
 
 div#faith {
-    background-color: #faf9ff;
+    background-color: #f2e2ed;
     padding-bottom: 40px;
 
     h2 {
         font-weight: 300;
-        font-size: 1.75em;
-        padding: 80px;
+        font-size: 1.35em;
+        padding: 50px;
     }
 
     div.text {
@@ -218,23 +247,37 @@ div#faith {
 
         p {
             width: 450px;
-            margin: 40px 20px;
+            margin: 40px 10px;
             text-align: left;
             font-weight: 300;
-            font-size: 1.15em;
+            font-size: 0.88em;
+            max-width: 330px;
 
             &.quote {
                 font-weight: 400;
-                font-style: italic;
-                color: #6534ff;
-                font-size: 2.5em;
+                color: $orange;
+                font-size: 1.9em;
+
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 160px;
+                    height: 0;
+                    border-top: solid black 2px;
+                    margin-bottom: 28px;
+                    margin-left: 5px;
+                }
+            }
+
+            &.text {
+                line-height: 1.25em;
             }
         }
     }
 }
 
 div.kotlin {
-    background-color: #6534ff;
+    background-color: $orange;
     color: white;
     padding: 50px;
 
@@ -246,14 +289,14 @@ div.kotlin {
     }
 
     h2 {
-        font-size: 2.5em;
-        font-weight: 300;
+        font-size: 1.95em;
+        font-weight: 700;
     }
 
     p {
         font-weight: 300;
-        font-size: 1.75em;
-        max-width: 900px;
+        font-size: 1.35em;
+        max-width: 750px;
         margin: 30px auto;
     }
 
@@ -263,7 +306,7 @@ div.kotlin {
         padding: 20px;
 
         p {
-            font-size: 1.5em;
+            font-size: 1.2em;
             margin: 10px auto;
         }
     }
@@ -275,13 +318,14 @@ p.kodein-framework {
     margin: 30px auto;
     padding: 0 20px;
     font-weight: 300;
-    font-size: 1.4em;
+    font-size: 1.08em;
 }
 
 div#footer {
-    background-color: #6534ff;
+    background: #921f81;
+    background: linear-gradient(135deg, #e8441f 0%,#921f81 100%);
     color: white;
-    padding: 40px 0 90px 0;
+    padding: 10px 0 90px 0;
 
     a {
         color: white;
@@ -299,10 +343,24 @@ div#footer {
                 font-size: 1.2em;
             }
         }
+
+        &.small {
+            li {
+                margin: 10px 35px;
+
+                h3 {
+                    font-size: 0.9em;
+                }
+
+                p {
+                    font-size: 0.9em;
+                }
+            }
+        }
     }
 }
 
-@media (max-width: 820px) {
+@media (max-width: 850px) {
     body {
         font-size: 1.1em;
     }
@@ -311,22 +369,21 @@ div#footer {
         display: none !important;
     }
 
-    div#header.small h1 {
-        margin: 18px 0 0 0;
+    div#header.small div#logo {
+        margin: 46px 0 0 0;
     }
-
-    div.kotlin.big {
-        background-size: 800px 800px;
-    }
+    //div#header.small h1 {
+    //    margin: 18px 0 0 0;
+    //}
 
 }
 
-@media (max-width: 355px) {
+@media (max-width: 450px) {
     div#strip {
         display: none !important;
     }
     body {
-        background-color: red;
+        background-color: $orange;
     }
     body::after {
         display: block;

@@ -1,11 +1,9 @@
 package net.kodein
 
 import org.w3c.dom.*
-import org.w3c.dom.css.get
 import kotlin.browser.document
 import kotlin.browser.window
 import kotlin.dom.addClass
-import kotlin.dom.hasClass
 import kotlin.dom.removeClass
 import kotlin.math.max
 
@@ -15,34 +13,40 @@ fun main(args: Array<String>) {
 }
 
 fun main() {
-    val header = document.querySelector("div#header")!! as HTMLElement
-    val headerTitle = document.querySelector("div#header h1")!! as HTMLElement
-    val headerSubtitle = document.querySelector("div#header h2")!! as HTMLElement
+    val headerDiv = document.querySelector("div#header")!! as HTMLElement
+    val logoDiv = document.querySelector("div#logo")!! as HTMLElement
+    val logoImg = document.querySelector("div#logo img")!! as HTMLElement
+    val headerTitle = document.querySelector("div#logo h1")!! as HTMLElement
+    val headerSubtitle = document.querySelector("div#logo h2")!! as HTMLElement
     val body = document.body!!
 
     var headerIsSmall = false
     fun setHeaderPos(isFirst: Boolean = false) {
-        if (isFirst || body.scrollTop < 580 || header.style.height != "40px") {
-            val height = max(40, 580 - body.scrollTop.toInt())
-            header.style.height = "${height}px"
-            val scroll = 580 - height
-            header.style.backgroundPosition = "center ${-220 - (scroll / 4)}px"
+        if (isFirst || body.scrollTop < 585 || headerDiv.style.height != "40px") {
+            val height = max(40, 585 - body.scrollTop.toInt())
+            headerDiv.style.height = "${height}px"
+            val scroll = 585 - height
+            headerDiv.style.backgroundPosition = "center ${-(scroll / 2.9)}px"
 
             if (height <= 110 && !headerIsSmall) {
                 headerIsSmall = true
                 if (!isFirst) {
+                    logoDiv.addClass("transition")
+                    logoImg.addClass("transition")
                     headerTitle.addClass("transition")
                     headerSubtitle.addClass("transition")
                 }
-                header.addClass("small")
+                headerDiv.addClass("small")
             }
             else if (height > 110 && headerIsSmall) {
                 headerIsSmall = false
                 if (!isFirst) {
+                    logoDiv.addClass("transition")
+                    logoImg.addClass("transition")
                     headerTitle.addClass("transition")
                     headerSubtitle.addClass("transition")
                 }
-                header.removeClass("small")
+                headerDiv.removeClass("small")
             }
         }
     }

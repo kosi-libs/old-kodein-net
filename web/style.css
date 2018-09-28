@@ -1,201 +1,273 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700");
+@import url(picon/LCTPicon.css);
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 body {
   background: #eee;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.25em; }
+  font-family: "Picon", sans-serif;
+  font-size: 1.25em;
+}
 
 h1 {
-  font-weight: 300;
-  font-size: 2.5em;
-  margin: 40px; }
+  font-weight: 700;
+  font-size: 1.9em;
+  margin: 40px;
+}
+h1.light {
+  font-weight: 200;
+}
+h1.color {
+  color: #E8441F;
+}
 
 hr {
   background: none;
   border: none;
-  margin: 40px 0; }
+  margin: 40px 0;
+}
 
 .transition {
-  transition: all 0.3s; }
+  transition: all 0.3s;
+}
 
 div#strip {
   background: white;
-  max-width: 1366px;
+  max-width: 1040px;
   min-height: 100%;
   margin: auto;
-  text-align: center; }
+  text-align: center;
+}
 
 div#header {
-  background-color: #6534ff;
-  height: 579px;
+  height: 585px;
   background-image: url("imgs/background.png");
   background-repeat: repeat;
-  background-position: center -220px;
+  background-size: 1040px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: fixed;
   width: 100%;
-  max-width: 1366px;
+  max-width: 1040px;
   top: 0;
-  overflow: hidden; }
-  div#header div#languages {
-    position: absolute;
-    top: 0;
-    left: 10px;
-    height: 40px;
-    color: white;
-    font-size: 0.8em;
-    cursor: default;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center; }
-    div#header div#languages p {
-      height: 1.6em; }
-    div#header div#languages a {
-      color: white;
-      text-decoration: none;
-      font-weight: 400;
-      cursor: pointer; }
-  div#header div#menu {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0 28px;
-    font-size: 0.7em; }
-    div#header div#menu a {
-      display: block;
-      font-weight: 700;
-      padding: 11px 15px;
-      text-decoration: none;
-      color: white;
-      cursor: pointer;
-      transition: background-color 0.15s; }
-      div#header div#menu a:hover {
-        background-color: #3504cf8F; }
-  div#header img {
-    width: 325px;
-    display: block; }
-  div#header h1 {
-    background: url("imgs/logo.png");
-    background-size: 325px auto;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 325px;
-    font-weight: 700;
-    font-size: 84px;
-    margin: 0;
-    margin-top: -20px; }
-    div#header h1 a {
-      color: transparent;
-      text-decoration: none; }
-  div#header h2 {
-    font-weight: 300;
-    color: white;
-    font-size: 37px;
-    margin-top: -28px;
-    padding-left: 5px; }
-  div#header.small h1 {
-    width: 170px;
-    font-size: 2.1em;
-    background-size: 170px auto;
-    margin: 18px 480px 0 0; }
-  div#header.small h2 {
-    opacity: 0;
-    pointer-events: none; }
+  overflow: hidden;
+}
+div#header div#languages {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  height: 40px;
+  color: white;
+  font-size: 0.8em;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+div#header div#languages p {
+  height: 1.6em;
+}
+div#header div#languages a {
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+  cursor: pointer;
+}
+div#header div#menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 28px;
+  font-size: 0.7em;
+}
+div#header div#menu a {
+  display: block;
+  font-weight: 700;
+  padding: 14px 15px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+div#header div#menu a:hover {
+  background-color: #E8441F;
+}
+div#header img {
+  width: 325px;
+  display: block;
+}
+div#header #logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+div#header #logo img {
+  height: 5.55em;
+  width: 5.5em;
+  padding-bottom: 1.88em;
+}
+div#header h1 {
+  font-weight: 700;
+  font-size: 2.98em;
+  margin: -20px 0 0;
+  text-align: left;
+}
+div#header h1 span {
+  font-weight: 300;
+}
+div#header h1 a {
+  color: white;
+  text-decoration: none;
+}
+div#header h2 {
+  font-weight: 300;
+  color: white;
+  font-size: 1.38em;
+  margin-top: -0.45em;
+  text-align: left;
+}
+div#header.small div#logo {
+  margin: 50px 430px 0 0;
+}
+div#header.small div#logo img {
+  height: 1.7em;
+  width: 2em;
+  margin-top: -12px;
+}
+div#header.small div#logo h1 {
+  font-size: 1.8em;
+}
+div#header.small div#logo h2 {
+  opacity: 0;
+  pointer-events: none;
+}
 
 span#header-shadow {
   display: block;
-  height: 579px; }
+  height: 579px;
+}
 
 ul#services {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  max-width: 920px;
-  margin: auto; }
-  ul#services li {
-    width: 210px;
-    margin: 20px 0; }
-    ul#services li img {
-      width: 74px;
-      height: 70px;
-      margin-bottom: 40px; }
+  max-width: 700px;
+  margin: auto;
+}
+ul#services li {
+  width: 150px;
+  margin: 20px 0;
+  font-size: 0.75em;
+}
+ul#services li img {
+  width: 60px;
+  height: 55px;
+  margin-bottom: 40px;
+}
 
 ul.offers {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; }
-  ul.offers li {
-    max-width: 450px;
-    margin: 30px 20px; }
-    ul.offers li h3 {
-      font-size: 1.4em;
-      margin-bottom: 30px; }
-    ul.offers li p {
-      font-size: 1.4em;
-      font-weight: 300; }
+  justify-content: center;
+  margin: auto;
+  max-width: 800px;
+}
+ul.offers li {
+  max-width: 310px;
+  margin: 28px 20px;
+}
+ul.offers li h3 {
+  font-size: 1.07em;
+  margin-bottom: 30px;
+}
+ul.offers li p {
+  font-size: 1.05em;
+  font-weight: 300;
+}
 
 div#faith {
-  background-color: #faf9ff;
-  padding-bottom: 40px; }
-  div#faith h2 {
-    font-weight: 300;
-    font-size: 1.75em;
-    padding: 80px; }
-  div#faith div.text {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-    justify-content: center; }
-    div#faith div.text.reverse {
-      flex-direction: row-reverse; }
-    div#faith div.text p {
-      width: 450px;
-      margin: 40px 20px;
-      text-align: left;
-      font-weight: 300;
-      font-size: 1.15em; }
-      div#faith div.text p.quote {
-        font-weight: 400;
-        font-style: italic;
-        color: #6534ff;
-        font-size: 2.5em; }
+  background-color: #f2e2ed;
+  padding-bottom: 40px;
+}
+div#faith h2 {
+  font-weight: 300;
+  font-size: 1.35em;
+  padding: 50px;
+}
+div#faith div.text {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+}
+div#faith div.text.reverse {
+  flex-direction: row-reverse;
+}
+div#faith div.text p {
+  width: 450px;
+  margin: 40px 10px;
+  text-align: left;
+  font-weight: 300;
+  font-size: 0.88em;
+  max-width: 330px;
+}
+div#faith div.text p.quote {
+  font-weight: 400;
+  color: #E8441F;
+  font-size: 1.9em;
+}
+div#faith div.text p.quote::before {
+  content: "";
+  display: block;
+  width: 160px;
+  height: 0;
+  border-top: solid black 2px;
+  margin-bottom: 28px;
+  margin-left: 5px;
+}
+div#faith div.text p.text {
+  line-height: 1.25em;
+}
 
 div.kotlin {
-  background-color: #6534ff;
+  background-color: #E8441F;
   color: white;
   padding: 50px;
-  margin-bottom: 20px; }
-  div.kotlin.big {
-    background-image: url("imgs/kotlin-transparent.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 1100px 1100px; }
-  div.kotlin h2 {
-    font-size: 2.5em;
-    font-weight: 300; }
-  div.kotlin p {
-    font-weight: 300;
-    font-size: 1.75em;
-    max-width: 900px;
-    margin: 30px auto; }
-  div.kotlin.small {
-    padding: 20px; }
-    div.kotlin.small p {
-      font-size: 1.5em;
-      margin: 10px auto; }
+  margin-bottom: 20px;
+}
+div.kotlin.big {
+  background-image: url("imgs/kotlin-transparent.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1100px 1100px;
+}
+div.kotlin h2 {
+  font-size: 1.95em;
+  font-weight: 700;
+}
+div.kotlin p {
+  font-weight: 300;
+  font-size: 1.35em;
+  max-width: 750px;
+  margin: 30px auto;
+}
+div.kotlin.small {
+  padding: 20px;
+}
+div.kotlin.small p {
+  font-size: 1.2em;
+  margin: 10px auto;
+}
 
 p.kodein-framework {
   text-align: left;
@@ -203,39 +275,58 @@ p.kodein-framework {
   margin: 30px auto;
   padding: 0 20px;
   font-weight: 300;
-  font-size: 1.4em; }
+  font-size: 1.08em;
+}
 
 div#footer {
-  background-color: #6534ff;
+  background: #921f81;
+  background: linear-gradient(135deg, #e8441f 0%, #921f81 100%);
   color: white;
-  padding: 40px 0 90px 0; }
-  div#footer a {
-    color: white; }
-  div#footer ul.offers li {
-    margin: 30px 70px; }
-    div#footer ul.offers li h3 {
-      font-size: 1.2em; }
-    div#footer ul.offers li p {
-      font-size: 1.2em; }
+  padding: 10px 0 90px 0;
+}
+div#footer a {
+  color: white;
+}
+div#footer ul.offers li {
+  margin: 30px 70px;
+}
+div#footer ul.offers li h3 {
+  font-size: 1.2em;
+}
+div#footer ul.offers li p {
+  font-size: 1.2em;
+}
+div#footer ul.offers.small li {
+  margin: 10px 35px;
+}
+div#footer ul.offers.small li h3 {
+  font-size: 0.9em;
+}
+div#footer ul.offers.small li p {
+  font-size: 0.9em;
+}
 
-@media (max-width: 820px) {
+@media (max-width: 850px) {
   body {
-    font-size: 1.1em; }
+    font-size: 1.1em;
+  }
 
   div#menu {
-    display: none !important; }
+    display: none !important;
+  }
 
-  div#header.small h1 {
-    margin: 18px 0 0 0; }
-
-  div.kotlin.big {
-    background-size: 800px 800px; } }
-@media (max-width: 355px) {
+  div#header.small div#logo {
+    margin: 46px 0 0 0;
+  }
+}
+@media (max-width: 450px) {
   div#strip {
-    display: none !important; }
+    display: none !important;
+  }
 
   body {
-    background-color: red; }
+    background-color: #E8441F;
+  }
 
   body::after {
     display: block;
@@ -243,6 +334,8 @@ div#footer {
     content: "Viewport to small!!";
     color: white;
     font-size: 3em;
-    text-align: center; } }
+    text-align: center;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

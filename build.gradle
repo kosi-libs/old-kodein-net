@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        kotlin_version = '1.2.30'
+        kotlin_version = '1.2.70'
     }
 
     repositories {
@@ -9,12 +9,10 @@ buildscript {
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "gradle.plugin.org.kravemir.gradle.sass:GradleSassPlugin:1.2.2"
     }
 }
 
 apply plugin: 'kotlin2js'
-apply plugin: "org.kravemir.gradle.sass"
 
 repositories {
     jcenter()
