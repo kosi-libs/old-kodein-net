@@ -13,12 +13,13 @@ fun main(args: Array<String>) {
 }
 
 fun main() {
+    val body = document.body!!
+
     val headerDiv = document.querySelector("div#header")!! as HTMLElement
     val logoDiv = document.querySelector("div#logo")!! as HTMLElement
     val logoImg = document.querySelector("div#logo img")!! as HTMLElement
     val headerTitle = document.querySelector("div#logo h1")!! as HTMLElement
     val headerSubtitle = document.querySelector("div#logo h2")!! as HTMLElement
-    val body = document.body!!
 
     var headerIsSmall = false
     fun setHeaderPos(isFirst: Boolean = false) {
@@ -28,7 +29,7 @@ fun main() {
             val scroll = 585 - height
             headerDiv.style.backgroundPosition = "center ${-(scroll / 2.9)}px"
 
-            if (height <= 110 && !headerIsSmall) {
+            if (height <= 165 && !headerIsSmall) {
                 headerIsSmall = true
                 if (!isFirst) {
                     logoDiv.addClass("transition")
@@ -38,7 +39,7 @@ fun main() {
                 }
                 headerDiv.addClass("small")
             }
-            else if (height > 110 && headerIsSmall) {
+            else if (height > 165 && headerIsSmall) {
                 headerIsSmall = false
                 if (!isFirst) {
                     logoDiv.addClass("transition")
@@ -70,7 +71,6 @@ fun main() {
         val height = heightStr.substring(0, heightStr.length - 2).toInt()
 
         val endPos = -height + kotlinDiv.clientHeight
-//        val bgPos = (factor * endPos).toInt()
         val bgPos = (factor * (endPos - kotlinDiv.clientHeight)).toInt() + (kotlinDiv.clientHeight / 2)
 
         kotlinDiv.style.backgroundPosition = "center ${bgPos}px"

@@ -38,6 +38,7 @@ div#strip {
   min-height: 100%;
   margin: auto;
   text-align: center;
+  box-shadow: 0 0 2px 0 gray;
 }
 
 div#header {
@@ -54,6 +55,8 @@ div#header {
   max-width: 1040px;
   top: 0;
   overflow: hidden;
+  box-shadow: 0 0 3px 0 gray;
+  clip-path: inset(0px 0px -5px 0);
 }
 div#header div#languages {
   position: absolute;
@@ -109,6 +112,7 @@ div#header #logo {
   align-items: center;
 }
 div#header #logo img {
+  display: block;
   height: 5.55em;
   width: 5.5em;
   padding-bottom: 1.88em;
@@ -132,6 +136,7 @@ div#header h2 {
   font-size: 1.38em;
   margin-top: -0.45em;
   text-align: left;
+  padding-left: 2px;
 }
 div#header.small div#logo {
   margin: 50px 430px 0 0;
