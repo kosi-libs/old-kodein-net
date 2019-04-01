@@ -1,31 +1,22 @@
 package net.kodein.workshop
 
-import kotlinx.css.*
-import net.kodein.kodeinOrange
-import net.kodein.mainpage.fragment.comp.offers
+import net.kodein.workshop.frag.*
 import react.RBuilder
 import react.RComponent
 import react.RProps
 import react.RState
-import react.dom.*
-import styled.css
-import styled.styledDiv
-import styled.styledP
-import kotlin.js.Date
-import kotlinx.css.span as subSpan
 import kotlinx.css.p as subP
+import kotlinx.css.span as subSpan
 
 class Workshop : RComponent<RProps, RState>() {
 
     override fun RBuilder.render() {
-
-        styledDiv {
-            css {
-                margin(bottom = 40.px)
-            }
-
-            h1 { +"Workshop!" }
-
-        }
+        child(Header::class)  {}
+        child(Introduction::class)  {}
+        child(Requirements::class) {}
+        child(Topics::class) {}
+        child(WhoWeAre::class) {}
+        child(WhenAndWhere::class) {}
+        child(Contact::class) {}
     }
 }

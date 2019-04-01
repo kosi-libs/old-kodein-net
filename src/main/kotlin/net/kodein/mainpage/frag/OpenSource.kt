@@ -1,14 +1,11 @@
-package net.kodein.mainpage.fragment
+package net.kodein.mainpage.frag
 
 import kotlinx.css.*
+import net.kodein.Text
 import net.kodein.kodeinOrange
-import net.kodein.mainpage.MainPage
-import net.kodein.mainpage.fragment.comp.offers
+import net.kodein.mainpage.frag.comp.offers
 import react.RBuilder
-import react.RComponent
-import react.RProps
 import react.RState
-import react.dom.b
 import react.dom.br
 import react.dom.p
 import react.dom.span
@@ -19,7 +16,7 @@ import kotlin.js.Date
 import kotlinx.css.span as subSpan
 import kotlinx.css.p as subP
 
-class OpenSource : RComponent<MainPage.FragmentProps, RState>() {
+class OpenSource : Text.Component<Text.Props, RState>() {
 
     override fun RBuilder.render() {
 
@@ -28,10 +25,10 @@ class OpenSource : RComponent<MainPage.FragmentProps, RState>() {
                 margin(bottom = 40.px)
             }
             offers {
-                "Multiplatform" { +"First High-level Kotlin multiplatform framework." }
-                "Mobile first" { +"Made with Android, iOS & the mobile Web in mind." }
-                "Open Source" { +"Safe, documented, thoroughly tested and widely used." }
-                "Everywhere" { +"Compatible with mobile, server, desktop & embedded targets." }
+                (-Text.os_multi_title) { +-Text.os_multi_content }
+                (-Text.os_mobile_title) { +-Text.os_mobile_content }
+                (-Text.os_open_title) { +-Text.os_open_content }
+                (-Text.os_evw_title) { +-Text.os_evw_content }
             }
 
             styledDiv {
@@ -71,7 +68,7 @@ class OpenSource : RComponent<MainPage.FragmentProps, RState>() {
                     css {
                         fontSize = 1.4.em
                     }
-                    +"= ${Date().getFullYear() - 2015} years!"
+                    +"= ${Date().getFullYear() - 2015} ${-Text.os_years}"
                 }
             }
 
@@ -90,19 +87,15 @@ class OpenSource : RComponent<MainPage.FragmentProps, RState>() {
                 }
 
                 p {
-                    +"For business code units, using the Kotlin language & the Kodein framework unlocks an amazing potential: the ability to truly develop once, test once and deploy everywhere."
-                    br {}
-                    +"In addition to JVM and Android bytecode, Kotlin & Kodein can target Javascript as well as native iOS assembly."
+                    (-Text.os_text_1)()
                 }
 
                 p {
-                    b { +"KODEIN" }
-                    +"Koders is at the root of the #1 multi-platform framework that allows a developer to create business code units that can run on Android, iOS, the Web, server and desktop softwares."
+                    (-Text.os_text_2)()
                 }
 
                 p {
-                    +"Want to know more? Learn this amazing technology? "
-                    b { +"Contact us!" }
+                    (-Text.os_text_3)()
                 }
             }
         }

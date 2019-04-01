@@ -1,4 +1,4 @@
-package net.kodein.mainpage.fragment.comp
+package net.kodein.mainpage.frag.comp
 
 import kotlinx.css.*
 import react.RBuilder

@@ -1,18 +1,13 @@
-package net.kodein.mainpage.fragment
+package net.kodein.mainpage.frag
 
 import kotlinx.css.*
-import net.kodein.mainpage.MainPage
+import net.kodein.Text
 import react.RBuilder
 import react.RComponent
-import react.RProps
 import react.RState
-import react.dom.b
-import react.dom.br
 import styled.*
 
-class Introduction : RComponent<MainPage.FragmentProps, RState>() {
-
-    private fun r(block: RBuilder.() -> Unit) = block
+class Introduction : RComponent<Text.Props, RState>() {
 
     override fun RBuilder.render() {
         styledH1 {
@@ -22,7 +17,7 @@ class Introduction : RComponent<MainPage.FragmentProps, RState>() {
                 margin(40.px)
             }
 
-            +"We are Kotlin experts."
+            +Text.kotlin_experts[props.lang]
         }
 
         styledUl {
@@ -36,10 +31,10 @@ class Introduction : RComponent<MainPage.FragmentProps, RState>() {
             }
 
             listOf(
-                    "training" to r { +"Training & consulting services." },
-                    "kotlin" to r { +"Jetbrains certified professional training." },
-                    "layers" to r { b { +"Kotlin" } ; +"/Everywhere:" ; br {} ; +"all mobile platforms." },
-                    "opensource" to r { +"Open Source multi-platform framework." }
+                    "training" to Text.head_training,
+                    "kotlin" to Text.head_certif,
+                    "layers" to Text.head_kotlin,
+                    "opensource" to Text.head_framework
             ).forEach { (img, content) ->
                 styledLi {
                     css {
@@ -56,7 +51,7 @@ class Introduction : RComponent<MainPage.FragmentProps, RState>() {
                         }
                     }
                     styledP {
-                        content()
+                        content[props.lang]()
                     }
                 }
             }

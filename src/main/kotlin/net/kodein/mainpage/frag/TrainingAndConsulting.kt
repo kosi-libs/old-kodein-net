@@ -1,21 +1,21 @@
-package net.kodein.mainpage.fragment
+package net.kodein.mainpage.frag
 
 import kotlinx.css.Color
 import kotlinx.css.FontWeight
 import kotlinx.css.em
 import kotlinx.css.px
+import net.kodein.Text
 import net.kodein.kodeinOrange
 import net.kodein.mainpage.MainPage
-import net.kodein.mainpage.fragment.comp.offers
+import net.kodein.mainpage.frag.comp.offers
 import org.w3c.dom.HTMLElement
 import react.*
-import react.dom.a
 import react.dom.br
 import styled.css
 import styled.styledA
 import styled.styledH2
 
-class TrainingAndConsulting : RComponent<MainPage.FragmentProps, RState>(), MainPage.AnchorFragment {
+class TrainingAndConsulting : Text.Component<Text.Props, RState>(), MainPage.AnchorFragment {
 
     override val scrollTo = createRef<HTMLElement>()
 
@@ -28,23 +28,23 @@ class TrainingAndConsulting : RComponent<MainPage.FragmentProps, RState>(), Main
                 fontSize = 1.9.em
                 marginTop = 80.px
             }
-            +"Training & Consulting"
+            +Text.training_and_consulting[props.lang]
         }
 
         offers {
-            "Jetbrains certified" { +"First trainer in Europe to be certified by Jetbrains for Kotlin training." }
-            "Professional training" { +"Asynchronous & multiplatform programming. Native compilation. Migration to modern Kotlin." }
-            "KotlinConf Workshop" {
-                +"Join us to the multiplatform KotlinConf 2019 workshop!"
+            (-Text.tc_cert_title) { +-Text.tc_cert_content }
+            (-Text.tc_train_title) { +-Text.tc_train_content }
+            (-Text.tc_work_title) {
+                +-Text.tc_work_content
                 br {}
                 styledA(href = "#/workshop") {
                     css {
                         color = Color.kodeinOrange
                     }
-                    +"More information"
+                    +-Text.more_information
                 }
             }
-            "Architecture consultancy" { +"Creation, documentation and deployment of cutting edge Open Source architectures." }
+            (-Text.tc_arch_title) { +-Text.tc_arch_content }
         }
 
     }

@@ -1,17 +1,18 @@
-package net.kodein.mainpage.fragment
+package net.kodein.mainpage.frag
 
 import kotlinx.css.*
 import kotlinx.css.properties.TextDecoration
 import kotlinx.css.properties.boxShadow
 import kotlinx.css.properties.s
 import kotlinx.css.properties.transition
+import net.kodein.Text
+import net.kodein.comp.Logo
 import net.kodein.mainpage.MainPage
 import org.w3c.dom.HTMLDivElement
 import org.w3c.dom.events.Event
 import react.*
 import react.dom.a
 import react.dom.b
-import react.dom.div
 import react.dom.p
 import styled.*
 import kotlin.browser.document
@@ -19,7 +20,7 @@ import kotlin.browser.window
 import kotlin.math.max
 import kotlinx.css.a as subA
 
-class Header : RComponent<MainPage.Props, Header.State>() {
+class Header : Text.Component<MainPage.Props, Header.State>() {
 
     interface State : RState {
         var isSmall: Boolean
@@ -109,82 +110,28 @@ class Header : RComponent<MainPage.Props, Header.State>() {
                             backgroundColor = Color("#FFFFFF44")
                         }
                     }
+
+                    media("(max-width: 880px)") {
+                        display = Display.none
+                    }
+
                 }
-                a(href = "#/home/${props.lang}/training") { +"TRAINING & CONSULTING" }
+                a(href = "#/home/${props.lang}/training") { +(-Text.training_and_consulting).toUpperCase() }
                 a(href = "#/home/${props.lang}/kotlin") { +"KOTLIN/EVERYWHERE" }
                 a(href = "#/home/${props.lang}/opensource") { +"OPEN SOURCE" }
-                a(href = "#/home/${props.lang}/contact") { +"CONTACT & COMMUNITY" }
+                a(href = "#/home/${props.lang}/contact") { +(-Text.contact_and_community).toUpperCase() }
             }
 
-            styledDiv {
-                css {
-                    display = Display.flex
-                    flexDirection = FlexDirection.row
-                    alignItems = Align.center
-                    if (state.isSmall)
-                        margin(top = 48.px, right = 550.px)
-                    if (state.hasTransition) {
-                        transition(duration = 0.3.s)
-                    }
+            child(Logo::class) {
+                attrs {
+                    bold = "KODEIN"
+                    light = "Koders"
+                    sub = { +"painless technology" }
+                    href = "#/home/${props.lang}"
+                    isSmall = state.isSmall
+                    smallMargin = 465.px
+                    hasTransition = state.hasTransition
                 }
-
-                styledImg(alt = "Kodein logo", src = "imgs/logo-white.svg") {
-                    css {
-                        display = Display.block
-                        width = if (state.isSmall) 2.em else 5.55.em
-                        height = if (state.isSmall) 1.7.em else 5.55.em
-                        paddingBottom = 1.88.em
-                        if (state.isSmall)
-                            marginTop = (-12).px
-                        if (state.hasTransition)
-                            transition(duration = 0.3.s)
-                    }
-                }
-
-                div {
-                    styledH1 {
-                        css {
-                            fontWeight = FontWeight.w700
-                            fontSize = if (state.isSmall) 1.8.em else 2.98.em;
-                            marginTop = (-20).px
-                            textAlign = TextAlign.left
-                            if (state.hasTransition)
-                                transition(duration = 0.3.s)
-                        }
-
-                        styledA(href = "#/home/${props.lang}") {
-                            css {
-                                color = Color.white
-                                textDecoration = TextDecoration.none
-                            }
-
-                            +"KODEIN"
-
-                            styledSpan {
-                                css.fontWeight = FontWeight.w300
-                                +"Koders"
-                            }
-                        }
-                    }
-                    styledH2 {
-                        css {
-                            fontWeight = FontWeight.w300
-                            color = Color.white
-                            fontSize = 1.38.em
-                            marginTop = (-0.45).em
-                            textAlign = TextAlign.left
-                            paddingLeft = 2.px;
-                            if (state.isSmall) {
-                                opacity = 0
-                                pointerEvents = PointerEvents.none
-                            }
-                            if (state.hasTransition)
-                                transition(duration = 0.3.s)
-                        }
-                        +"painless technology"
-                    }
-                }
-
             }
         }
 
@@ -222,6 +169,7 @@ class Header : RComponent<MainPage.Props, Header.State>() {
 
     override fun componentDidMount() {
         setHeaderPos(true)
+        window.setTimeout({ setState { hasTransition = true } }, 500)
         document.addEventListener("scroll", scrollCallback)
     }
 

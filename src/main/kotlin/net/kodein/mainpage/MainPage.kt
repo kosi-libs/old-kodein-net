@@ -1,17 +1,14 @@
 package net.kodein.mainpage
 
-import net.kodein.mainpage.fragment.*
+import net.kodein.mainpage.frag.*
+import net.kodein.Text
 import org.w3c.dom.*
 import react.*
 import kotlin.browser.window
 
 class MainPage : RComponent<MainPage.Props, RState>() {
 
-    interface FragmentProps : RProps {
-        var lang: String
-    }
-
-    interface Props : FragmentProps {
+    interface Props : Text.Props {
         var anchor: String?
     }
 
@@ -21,7 +18,7 @@ class MainPage : RComponent<MainPage.Props, RState>() {
 
     private val refs = listOf("training", "kotlin", "opensource", "contact").associateWith { createRef<AnchorFragment>() }
 
-    fun RElementBuilder<FragmentProps>.conf(refKey: String? = null) {
+    fun RElementBuilder<Text.Props>.conf(refKey: String? = null) {
         if (refKey != null)
             ref = refs.getValue(refKey)
         attrs {
@@ -30,7 +27,7 @@ class MainPage : RComponent<MainPage.Props, RState>() {
     }
 
     override fun RBuilder.render() {
-        child(Header::class) { conf() ; attrs { anchor = props.anchor } }
+        child(Header::class) { conf() }
         child(Introduction::class) { conf() }
         child(TrainingAndConsulting::class) { conf("training") }
         child(KotlinEverywhere::class) { conf("kotlin") }

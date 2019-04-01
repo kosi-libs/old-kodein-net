@@ -1,20 +1,22 @@
-package net.kodein.mainpage.fragment
+package net.kodein.mainpage.frag
 
 import kotlinx.css.*
 import kotlinx.css.properties.borderTop
+import net.kodein.Text
 import net.kodein.kodeinOrange
 import net.kodein.mainpage.MainPage
 import org.w3c.dom.HTMLElement
-import react.*
+import react.RBuilder
+import react.RState
+import react.createRef
 import react.dom.b
 import react.dom.br
 import styled.*
+import kotlinx.css.b as subB
 
-class KotlinEverywhere : RComponent<MainPage.FragmentProps, RState>(), MainPage.AnchorFragment {
+class KotlinEverywhere : Text.Component<Text.Props, RState>(), MainPage.AnchorFragment {
 
     override val scrollTo = createRef<HTMLElement>()
-
-    private fun r(block: RBuilder.() -> Unit) = block
 
     override fun RBuilder.render() {
         styledH2 {
@@ -47,38 +49,15 @@ class KotlinEverywhere : RComponent<MainPage.FragmentProps, RState>(), MainPage.
                     fontSize = 1.35.em
                 }
 
-                +"We help you deploy your business everywhere:"
+                +-Text.ke_title
                 br {}
-                b {
-                    +"All mobile & web platforms at once!"
-                }
+                b { +-Text.ke_subtitle }
             }
 
             listOf(
-                    r { +"Code once," ; br {} ; +"test once," ; br {} ; +"run everywhere." } to
-                            r {
-                                +"Kotlin is the first industry language to be developped with multiplatform in mind."
-                                br {}
-                                +"This means that, rather than trying to squeeze a language and an unfitted runtime into another target, the language and its runtime has been thought from its very inception for multiplatform and portability."
-                                br {}
-                                +"Doing so, the language elegantly factorizes the common runtime capabilities while allowing programmers to be specific about each targetted platform."
-                            },
-                    r { +"Kodein Koders is at the center of Kotlin/Everywhere in Europe." } to
-                            r {
-                                +"We released the first non-Jetbrains library to be multiplatform and usable on each and every platform Kotlin can target."
-                                br {}
-                                +"By partnering closely with JetBrains (the creators of Kotlin), we ensure that we are always on top of each evolution of the language."
-                                br {}
-                                +"Kodein Koders is the first training provider in Europe focused on Kotlin/Everywhere technologies, we provided industry recognized training on multiplatform, asychronous & native Kotlin development."
-                            },
-                    r { +"Open source is a way of code:" ; br {} ; +"using is only the first step." } to
-                            r {
-                                +"The Kodein Framework is the first Open-Source multiplatform mobile framework written exclusively for Kotlin/Everywhere. It allows programmers to focus on their application business."
-                                br {}
-                                +"We firmly believe that open sourcing non-business critical components and contributing to existing projects leads to better software."
-                                br {}
-                                +"Kodein Koders is heavily invested in using & contributing to Open Source initiatives. The Kotlin language & runtine as well as the Kodein Framework: everything is Open!"
-                            }
+                    Text.ke_code_title to Text.ke_code_content,
+                    Text.ke_kodein_title to Text.ke_kodein_content,
+                    Text.ke_open_title to Text.ke_open_content
             ).forEachIndexed { index, (quote, text) ->
                 styledDiv {
                     css {
@@ -110,7 +89,7 @@ class KotlinEverywhere : RComponent<MainPage.FragmentProps, RState>(), MainPage.
                             }
                         }
 
-                        quote()
+                        (-quote)()
                     }
                     styledP {
                         css {
@@ -120,9 +99,12 @@ class KotlinEverywhere : RComponent<MainPage.FragmentProps, RState>(), MainPage.
                             fontWeight = FontWeight.w300
                             fontSize = 0.88.em
                             maxWidth = 330.px
+                            subB {
+                                fontWeight = FontWeight.w500
+                            }
                         }
 
-                        text()
+                        (-text)()
                     }
                 }
             }
