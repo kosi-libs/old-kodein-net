@@ -21,6 +21,7 @@ class Logo : RComponent<Logo.Props, RState>() {
         var isSmall: Boolean?
         var hasTransition: Boolean?
         var smallMargin: LinearDimension?
+        var smallMarginOnNarrowScreen: LinearDimension?
     }
 
     override fun RBuilder.render() {
@@ -35,10 +36,17 @@ class Logo : RComponent<Logo.Props, RState>() {
                 alignItems = Align.center
                 justifyContent = JustifyContent.center
 
+                media("(max-width: 600px)") {
+                    fontSize = 0.8.em
+                }
+                media("(max-width: 450px)") {
+                    fontSize = 0.75.em
+                }
+
                 if (isSmall) {
                     margin(top = 15.px, right = (props.smallMargin ?: 0.px))
                     media("(max-width: 880px)") {
-                        marginRight = 0.px
+                        marginRight = props.smallMarginOnNarrowScreen ?: 0.px
                     }
                 }
                 if (hasTransition)

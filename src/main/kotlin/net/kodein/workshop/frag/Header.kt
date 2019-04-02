@@ -96,6 +96,8 @@ class Header : RComponent<RProps, Header.State>() {
                     sub = { b { +"Kotlin" } ; +"/Everywhere" ; br {} ; b { +"Kotlin" } ; +"Conf Amsterdam" }
                     isSmall = state.isSmall
                     hasTransition = state.hasTransition
+                    smallMargin = 120.px
+                    smallMarginOnNarrowScreen = 120.px
                 }
             }
         }
