@@ -38,7 +38,7 @@ class WhenAndWhere : RComponent<RProps, RState>() {
                     css {
                         color = Color.kotlinConfOrange
                     }
-                    +"KotlinConf Amsterdam"
+                    +"KotlinConf Copenhagen"
                 }
             }
 

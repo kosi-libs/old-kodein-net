@@ -95,7 +95,7 @@ class Header : RComponent<RProps, Header.State>() {
                 attrs {
                     bold = "2019"
                     light = "Workshop"
-                    sub = { b { +"Kotlin" } ; +"/Everywhere" ; br {} ; b { +"Kotlin" } ; +"Conf Amsterdam" }
+                    sub = { b { +"Kotlin" } ; +"/Everywhere" ; br {} ; b { +"Kotlin" } ; +"Conf Copenhagen" }
                     isSmall = state.isSmall
                     hasTransition = state.hasTransition
                     smallMargin = 120.px
