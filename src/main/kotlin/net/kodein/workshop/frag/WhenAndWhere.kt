@@ -7,6 +7,7 @@ import react.RBuilder
 import react.RComponent
 import react.RProps
 import react.RState
+import react.dom.a
 import react.dom.b
 import react.dom.br
 import styled.css
@@ -27,8 +28,35 @@ class WhenAndWhere : RComponent<RProps, RState>() {
         }
 
         offers {
-            "KotlinConf 2019" { +"The workshop will take place on" ; br {} ; b { +"december 4th 2019" } ; br {} ;  +"at " ; styledA(href = "https://kotlinconf.com/workshops/") { css { color = Color.kotlinConfOrange } ; +"KotlinConf Amsterdam" } }
-            "Join us!" { +"Save your place!" ; br {} ; +"First come, first served," ; br {} ; +"so register now!" }
+            "KotlinConf 2019" {
+                +"The workshop will take place on"
+                br {}
+                b { +"december 4th 2019" }
+                br {}
+                +"at "
+                styledA(href = "https://kotlinconf.com/workshops/") {
+                    css {
+                        color = Color.kotlinConfOrange
+                    }
+                    +"KotlinConf Amsterdam"
+                }
+            }
+
+            "Join us!" {
+                +"Save your place!"
+                br {}
+                +"First come, first served,"
+                br {}
+                +"so "
+                b {
+                    styledA(href = "https://kotlinconf.com/registration/") {
+                        css {
+                            color = Color.kotlinConfOrange
+                        }
+                        +"register now!"
+                    }
+                }
+            }
         }
 
     }
