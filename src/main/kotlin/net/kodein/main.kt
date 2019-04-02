@@ -27,6 +27,9 @@ fun main() {
                 media("(max-width: 880px)") {
                     fontSize = 1.1.em
                 }
+                media("(max-width: 380px)") {
+                    fontSize = 1.em
+                }
             }
 
             "#app" {

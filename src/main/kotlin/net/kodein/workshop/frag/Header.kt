@@ -74,18 +74,20 @@ class Header : RComponent<RProps, Header.State>() {
                     fontWeight = FontWeight.w300
                     color = Color.white
                }
-                +"by "
-                styledA (href = "#/") {
-                    css {
-                        color = Color.white
-                    }
-                    styledB {
+                p {
+                    +"by "
+                    styledA (href = "#/") {
                         css {
-                            fontWeight = FontWeight.w700
+                            color = Color.white
                         }
-                        +"KODEIN"
+                        styledB {
+                            css {
+                                fontWeight = FontWeight.w700
+                            }
+                            +"KODEIN"
+                        }
+                        +"Koders"
                     }
-                    +"Koders"
                 }
             }
 
